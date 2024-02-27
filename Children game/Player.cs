@@ -10,13 +10,14 @@ internal class Player
 
         var userChoice = Console.ReadLine();
 
-        while (userChoice != "камень" && userChoice != "ножницы" && userChoice != "бумага")
+        var possibleValues = new[] { "камень", "ножницы", "бумага" };
+
+        while (!possibleValues.Contains(userChoice))
         {
-            Console.WriteLine("Не корректный ввод. Давай ещё раз");
-            Console.Write("Напиши свой выбор (камень, ножницы, бумага): ");
+            Console.WriteLine($"Вы ввели не верное значение: {userChoice}");
+            Console.Write("Введите повторно своё значение: ");
             userChoice = Console.ReadLine();
         }
-
 
         return userChoice;
     }
