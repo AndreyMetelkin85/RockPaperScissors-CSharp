@@ -2,6 +2,8 @@ namespace Children_game;
 
 internal class Game
 {
+    public static readonly string[] PossibleValues = new[] { "камень", "ножницы", "бумага" };
+
     internal string StartGame()
     {
         var player = new Player();
@@ -13,21 +15,15 @@ internal class Game
         {
             return "Ничья";
         }
-        else if (computerChoice == "камень" && userChoice == "ножницы")
+
+        switch (computerChoice)
         {
-            return "Выиграл компьютер";
-        }
-        else if (computerChoice == "ножницы" && userChoice == "бумага")
-        {
-            return "Выиграл компьютер";
-        }
-        else if (computerChoice == "буага" && userChoice == "каень")
-        {
-            return "Выиграл компьютер";
-        }
-        else
-        {
-            return "Выиграл игрок";
+            case "камень" when userChoice == "ножницы":
+            case "ножницы" when userChoice == "бумага":
+            case "бумага" when userChoice == "камень":
+                return "Выиграл компьютер";
+            default:
+                return "Выиграл игрок";
         }
     }
 }
