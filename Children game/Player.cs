@@ -10,9 +10,8 @@ internal class Player
 
         var userChoice = Console.ReadLine();
 
-        var possibleValues = new[] { "камень", "ножницы", "бумага" };
 
-        while (!possibleValues.Contains(userChoice))
+        while (!Game.PossibleValues.Contains(userChoice))
         {
             Console.WriteLine($"Вы ввели не верное значение: {userChoice}");
             Console.Write("Введите повторно своё значение: ");
