@@ -1,10 +1,11 @@
 namespace Children_game;
 
-public abstract class Program
+internal class Program
 {
     public static void Main()
     {
-        var result = Game.StartGame();
+        var myGame = new Game();
+        var result = myGame.StartGame();
         Console.WriteLine(result);
     }
     
