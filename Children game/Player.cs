@@ -1,8 +1,8 @@
 namespace Children_game;
 
-public abstract class Player
+internal class Player
 {
-    public static string PlayerInfo()
+    internal string PlayerInfo()
     {
         Console.WriteLine("Добро пожаловать!");
         Console.WriteLine("Давай сыграем в игру камень, ножницы, бумага!");

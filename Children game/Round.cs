@@ -1,9 +1,9 @@
 
 namespace Children_game;
 
-public abstract class Round
+internal class Round
 {
-    public static string RandomChoice()
+    internal string RandomChoice()
     {
         var rand = new Random();
         switch (rand.Next(3))

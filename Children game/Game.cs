@@ -1,11 +1,13 @@
 namespace Children_game;
 
-public abstract class Game
+internal class Game
 {
-    public static string StartGame()
+    internal string StartGame()
     {
-        var computerChoice = Round.RandomChoice();
-        var userChoice = Player.PlayerInfo();
+        var player = new Player();
+        var userChoice = player.PlayerInfo();
+        var pc = new Round();
+        var computerChoice = pc.RandomChoice();
 
         if (computerChoice == userChoice)
         {
